@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量测试系统</title>
+    <link rel="stylesheet" href="./stylesheets/index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+</head>
+<body>
+
+<!--header part-->
+<div class="header container">
+    <!--<img src="./images/header_bg.png" class="header_bg">-->
+    <div class="logo">
+        <a href="#">
+            <img src="./images/logo.png">
+        </a>
+    </div>
+    <h1 class="title">竹间智能科技自动批量测试系统</h1>
+</div>
+
+<!--mainContent-->
+<div class="mainContent container">
+
+    <!--file upload-->
+    <div class="contentLeft">
+        <form method="post" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <h2>上传文件测试</h2>
+            <input type="text" id="filePath" name="filePath" placeholder="未选择任何文件" style="padding-left:10px;letter-spacing:3px;"><br/>
+            <p class="filewrap">
+                <input type="file" id="file" name="file" required><br/>
+            </p>
+            <span class="icon"><img class="next" src="./images/next.png"></span>
+            <button type="submit" id="upload" name="upload" class="btn">上传</button>
+        </form>
+
+        <!--data for score-->
+        <ul class="score">
+            <li>Precision:
+                <br/>
+                <span class="precision figure">90</span>
+            </li>
+            <li>Recall:
+                <br/>
+                <span class="recall figure">89.88</span>
+            </li>
+        </ul>
+    </div>
+
+
+    <!--data for chart-->
+    <div class="chart contentRight">
+        <h2>ROC曲线:</h2>
+        <!--<div class="roc" style="width: 100%; height: 250px;">-->
+        <canvas id="myChart" width="480" height="300" style="background-color: transparent;"></canvas>
+        <!--</div>-->
+    </div>
+
+</div>
+
+<script src="./javascripts/test.js"></script>
+<script src="./javascripts/graph.js"></script>
+</body>
+</html>
